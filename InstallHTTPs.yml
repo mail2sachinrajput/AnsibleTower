@@ -1,6 +1,6 @@
 ---
  - name: Install webserver and run 
-   hosts: prodserver
+   hosts: prodservers
    become: true
    tasks:
    - name: install http
