@@ -4,20 +4,6 @@
    become: true
    tasks:
     - name: copy the package to target machine
-      copy:
-       src: /home/infra/jdk-8u331-linux-x64.rpm
-       dest: /home/infra/
-       owner: root
-       group: root
-       mode: 0645
-    - name: update the package
-      shell: rpm -U /home/infra/jdk-8u331-linux-x64.rpm
-    - name: check the rpm upgraded or not
-      shell: rpm -qa jdk1.8 > /tmp/jdk-status.txt
-      ignore_errors: yes
-    - name: fetch status file
-      fetch:
-         src: /tmp/jdk-status.txt
-         dest: /tmp/jdkstatus/jdk_{{inventory_hostname}}_{{ansible_date_time.date}}.txt
-         flat: yes
-      become: yes
+      yum:
+       name: jdk1.8
+       state: present
