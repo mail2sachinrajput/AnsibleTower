@@ -9,4 +9,6 @@
       state: present
    - name: write in index.html
      command: echo "This is my first deployment with ansible tower using with git on cloud" > /var/www/html/index.html
+   - name: restart the service
+     command: systemctl restart httpd
 
