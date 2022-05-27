@@ -1,6 +1,6 @@
 ---
  - name: Install webserver and run 
-   hosts:
+   hosts: sachindemo
    become: true
    tasks:
    - name: install http
