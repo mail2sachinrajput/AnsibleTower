@@ -8,7 +8,9 @@
       name: httpd
       state: present
    - name: write in index.html
-     command: echo "This is my first deployment with ansible tower using with git on cloud" >> /var/www/html/index.html
+     Copy: 
+      src: index.html
+      dest: /var/www/html/index.html
    - name: restart the service
      service:
       name: httpd
