@@ -8,7 +8,7 @@
       name: httpd
       state: present
    - name: write in index.html
-     Copy: 
+     copy: 
       src: index.html
       dest: /var/www/html/index.html
    - name: restart the service
